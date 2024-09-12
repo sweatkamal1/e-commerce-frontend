@@ -15,7 +15,7 @@ const CreateCategory = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     try {
-      const { data } = await axios.post("/api/v1/category/create-category", {
+      const { data } = await axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/category/create-category `, {
         name,
       });
       if (data?.success) {
