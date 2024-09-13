@@ -46,8 +46,7 @@ const CreateProduct = () => {
       productData.append("quantity", quantity);
       productData.append("photo", photo);
       productData.append("category", category);
-      const { data } = axios.post(
-        "/api/v1/product/create-product",
+      const { data } = axios.post(`${process.env.REACT_APP_BASE_URL}api/v1/product/create-product`,
         productData
       );
       if (data?.success) {
